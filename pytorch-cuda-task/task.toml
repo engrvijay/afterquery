@@ -1,0 +1,31 @@
+version = "1.0"
+
+[metadata]
+name = "afterquery/pytorch-cuda-task"
+author_name = "Vijay Gayee"
+author_email = "vgayee@gmail.com"
+difficulty = "medium"
+category = "programming"
+tags = ["H100", "benchmark", "GPU", "linux", "python", "pytorch", "cuda"]
+gpu_types = ["H100"]
+gpus = 1
+paradigm = "optimization"
+compute = "gpu"
+languages = ["Python"]
+
+[verifier]
+timeout_sec = 120.0
+
+[agent]
+timeout_sec = 7200.0
+
+[task]
+name = "afterquery/pytorch-cuda-task"
+timeout_sec = 7200.0
+description = "This is GPU tasks, do not excute/run on CPU, The verifier checks for the GPU.detect the GPU at runtime instead of assuming a specific model. Time GPU work with warmup, synchronization and repeated runs; report the median"
+
+[environment]
+workdir = "/workspace"
+build_timeout_sec = 600.0
+allow_internet = false
+
